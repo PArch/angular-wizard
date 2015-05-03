@@ -51,9 +51,9 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
                 var editMode = $scope.editMode;
                 if (_.isUndefined(editMode) || _.isNull(editMode)) return;
 
-                if (editMode) {
+                if (editMode===true || editMode===false) {
                     _.each($scope.steps, function(step) {
-                        step.completed = true;
+                        step.completed = editMode;
                     });
                 }
             }, true);
